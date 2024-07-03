@@ -1,0 +1,478 @@
+/* Global styles */
+.app-container-light-mode body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f5f7;
+  color: #333;
+}
+
+.app-container-light-mode .container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
+
+/* Typography */
+.app-container-light-mode h1,  .app-container-light-mode  h2,  .app-container-light-mode  h3,
+.app-container-light-mode  h4,  .app-container-light-mode  h5,   .app-container-light-mode h6 {
+  color: #444;
+  margin-top: 0;
+}
+
+.app-container-light-mode p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.app-container-light-mode input, .app-container-light-mode select, .app-container-light-mode textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.app-container-light-mode .text-center {
+  text-align: center;
+}
+  
+.app-container-light-mode .loading {
+    margin: 20px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .app-container-light-mode .error {
+    margin: 20px;
+    font-size: 20px;
+    color: red;
+  }
+  
+  .app-container-light-mode {
+    margin: 20px;
+  }
+  
+  .app-container-light-mode .logout-button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .app-container-light-mode .component-select {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .app-container-light-mode .selected-component {
+    margin-top: 20px;
+  }
+  .login-container {
+    margin: 20px;
+  }
+  .login-button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Specific styles for components */
+  
+  /* AddSwitch component styles */
+  /* Product conteiner */
+  .app-container-light-mode .add-product-container {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-container-light-mode .form-container {
+  margin-bottom: 20px;
+}
+
+.app-container-light-mode .add-product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container-light-mode .input-group {
+  margin-bottom: 15px;
+}
+
+.app-container-light-mode .input-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.app-container-light-mode .add-product-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.app-container-light-mode .ports-section {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.app-container-light-mode .ports-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.app-container-light-mode .port-item {
+  margin-bottom: 10px;
+}
+
+.app-container-light-mode .remove-button {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.app-container-light-mode .remove-button:hover {
+  background-color: #bd2130;
+}
+
+.app-container-light-mode .message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #333;
+}
+/* Add Port */
+.app-container-light-mode .add-port-container {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .app-container-light-mode .add-port-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .app-container-light-mode .add-port-form {
+    margin-bottom: 20px;
+  }
+  
+  .app-container-light-mode .add-port-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .app-container-light-mode .add-port-input,
+  .app-container-light-mode .add-port-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  /* ConnectPorts component styles */
+  .app-container-light-mode .container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .app-container-light-mode select {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .app-container-light-mode button ,.app-container-light-mode .add-product-button,.app-container-light-mode  .add-port-button,
+  .app-container-light-mode   .connect-ports-button{
+    margin: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  .app-container-light-mode .add-port-button ,.app-container-light-mode   .connect-ports-button,.app-container-light-mode  .search-button{
+    width: 100%;
+    margin-left: auto;
+  }
+  .app-container-light-mode button:hover,.app-container-light-mode  .add-product-button:hover,.app-container-light-mode  .add-port-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  /* GraphComponent component styles */
+  .app-container-light-mode .clicked-node-info {
+    margin-top: 20px;
+  }
+  
+  .app-container-light-mode .clicked-node-info h2 {
+    margin-bottom: 10px;
+  }
+  
+
+  .app-container-light-mode .clicked-link-info {
+    margin-top: 20px;
+  }
+  
+  .app-container-light-mode .clicked-link-info h2 {
+    margin-bottom: 10px;
+  }
+  
+
+  
+/* Style for search fields */
+.app-container-light-mode .search-fields {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .app-container-light-mode .search-fields select,
+  .app-container-light-mode .search-fields input[type="text"] {
+    margin-right: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .app-container-light-mode .search-fields button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .app-container-light-mode .search-fields button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for clicked node info container */
+  .app-container-light-mode .clicked-node-info-container {
+    margin-top: 20px;
+  }
+  
+  .app-container-light-mode .clicked-node-info-container div {
+    margin-bottom: 10px;
+  }
+  
+  .app-container-light-mode .clicked-node-info-container pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+  }  
+
+  /*  Update*/
+  .app-container-light-mode .update-device-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form styles */
+  .app-container-light-mode .update-device-form {
+    margin: 0 auto;
+  }
+  
+  /* Title styles */
+  .app-container-light-mode .update-device-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  /* DeviceList component styles */
+  /*Delete*/
+  /* Container styles */
+  .app-container-light-mode .delete-device-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form styles */
+  .app-container-light-mode .delete-device-form {
+    margin: 0 auto;
+  }
+  
+  /* Title styles */
+  .app-container-light-mode .delete-device-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Dropdown container styles */
+  .app-container-light-mode .dropdown-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Dropdown item styles */
+  .app-container-light-mode .dropdown-item {
+    margin-bottom: 10px;
+  }
+  
+  /* Label styles */
+  .app-container-light-mode label {
+    font-weight: bold;
+  }
+  
+  /* Dropdown styles */
+  .app-container-light-mode .dropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  /* Button styles */
+  .app-container-light-mode .delete-product-button  {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .app-container-light-mode .delete-product-button:hover {
+    background-color: #c82333;
+  }
+  
+  /* .app-container-light-mode .message p {
+    color: #dc3545;
+    font-size: 14px;
+  } */
+  /* Device LIST */
+  
+  .app-container-light-mode .devices-container {
+    margin: 20px;
+  }
+  
+  .app-container-light-mode .devices-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .app-container-light-mode .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .app-container-light-mode .device-type {
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .app-container-light-mode .device-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .app-container-light-mode .device-item {
+    background: #f8fbf8;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .app-container-light-mode .device-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .app-container-light-mode .delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .app-container-light-mode .delete-button:hover {
+    background-color: #d32f2f;
+  }
+  
+  .app-container-light-mode .sub-device-list {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  /* Stylizacja dla pola wyszukiwania */
+  .app-container-light-mode .input-search {
+    margin-bottom: 20px;
+  }
+  
+  .app-container-light-mode .input-search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 1rem;
+  }
+
+  /* Responsive design */
+@media (max-width: 600px) {
+  .app-container-light-mode .container {
+      margin: 10px;
+      padding: 15px;
+  }
+
+  .app-container-light-mode button {
+      padding: 10px 16px;
+      font-size: 14px;
+  }
+
+  .app-container-light-mode input, .app-container-light-mode select,.app-container-light-mode  textarea {
+      font-size: 14px;
+  }
+
+  .app-container-light-mode .devices-title, .app-container-light-mode .device-type {
+      font-size: 20px;
+  }
+}

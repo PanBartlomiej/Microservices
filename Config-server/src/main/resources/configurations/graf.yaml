@@ -1,0 +1,68 @@
+spring:
+  application:
+    name: graf
+  boot:
+    admin:
+      client:
+        url: "http://localhost:9090"
+        username: "user1"
+        password: "password"
+  #Baza danych
+  neo4j:
+    uri: bolt://localhost:7687/neo4j
+    authentication:
+      username: neo4j
+      password: password
+  #Uwierzytelnianie
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${app.keycloak-url}/realms/oidc
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: ewidencja
+      principle-attribute: preferred_username
+#Discovery serwer eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://user1:password@localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    instance:
+      metadata-map:
+        user:
+          name: user1
+          password: password
+
+#Serwer  uwierzytelniający
+app:
+  keycloak-url: http://keycloak:8080
+
+logging:
+  level:
+    org.springframework.data.neo4j.cypher: trace
+
+#actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+
+
+server:
+  port: 8089
+

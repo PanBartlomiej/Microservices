@@ -1,0 +1,37 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  username: user1
+  password: password
+  roles: ADMIN
+server:
+  port: 8761
+spring:
+  security:
+    user:
+      name: user1
+      password: password
+      roles: ADMIN
+  boot:
+    admin:
+      client:
+        url: "http://localhost:9090"
+        username: "user1"
+        password: "password"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always

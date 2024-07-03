@@ -1,0 +1,87 @@
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: DEBUG
+server:
+  port: 8222
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://user1:password@localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    instance:
+      metadata-map:
+        user:
+          name: user1
+          password: password
+spring:
+  application:
+    name: gateway
+  boot:
+    admin:
+      client:
+        url: "http://localhost:9090"
+
+  cloud:
+    gateway:
+      routes:
+        - id: ewidencja
+          uri: http://ewidencja:8090
+          predicates:
+            - Path=/ewidencja/**
+          filters:
+            - RewritePath=/ewidencja/(?<segment>.*), /$\{segment}
+            - TokenRelay=
+
+        - id: graf
+          uri: http://graf:8089
+          predicates:
+            - Path=/graf/**
+          filters:
+            - RewritePath=/graf/(?<segment>.*), /$\{segment}
+            - TokenRelay=
+
+        - id: monitoring
+          uri: http://monitoring:8091
+          predicates:
+            - Path=/monitoring/**
+          filters:
+            - RewritePath=/monitoring/(?<segment>.*), /$\{segment}
+            - TokenRelay=
+
+  # Konfiguracja bramy dla Keycloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/oidc
+          jwk-set-uri: http://keycloak:8080/realms/oidc/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: ewidencja
+      principle-attribute: preferred_username
+
+
+#Serwer uwierzytelniający
+app:
+  keycloak-url: http://keycloak:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+

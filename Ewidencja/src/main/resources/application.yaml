@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Ewidencja
+#Serwer konfiguracyjny
+  config:
+    import: configserver:http://user1:password@localhost:8888
