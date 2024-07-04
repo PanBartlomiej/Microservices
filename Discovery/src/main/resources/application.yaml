@@ -1,6 +1,5 @@
 spring:
   application:
-    name: App-Metrics
-  #Serwer konfiguracyjny
+    name: Discovery
   config:
     import: optional:configserver:http://user1:password@config-server:8888

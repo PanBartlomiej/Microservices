@@ -3,7 +3,7 @@ spring:
     name: Monitoring
   #Serwer konfiguracyjny
   config:
-    import: configserver:http://user1:password@localhost:8888
+    import: optional:configserver:http://user1:password@config-server:8888
 
 
   boot:

@@ -1,20 +1,17 @@
 # Etap 1: Budowanie aplikacji
-FROM maven:3.8.6-openjdk-19 AS builder
+FROM gradle:jdk19 AS builder
 
 WORKDIR /app
-
-COPY pom.xml .
-COPY src ./src
-
-RUN mvn clean package -DskipTests
+COPY . .
+RUN ./gradlew build
 
 # Etap 2: Przygotowanie obrazu aplikacji
-FROM openjdk:19-jdk-slim
+FROM openjdk:22-ea-19
 
 WORKDIR /app
 
-COPY --from=builder /app/target/ewidencja-*.jar app.jar
+COPY --from=builder /app/build/libs/Ewidencja-*.jar app.jar
 
 EXPOSE 8090
 
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=classpath:/application.yml,file:/app/application.yml"]
+ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=classpath:/application.yaml,file:/app/application.yaml"]

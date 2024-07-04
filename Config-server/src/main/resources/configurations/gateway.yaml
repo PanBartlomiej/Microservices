@@ -8,10 +8,10 @@ server:
   port: 8222
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka
   client:
     service-url:
-      defaultZone: http://user1:password@localhost:8761/eureka/
+      defaultZone: http://user1:password@eureka:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
     instance:
@@ -25,7 +25,7 @@ spring:
   boot:
     admin:
       client:
-        url: "http://localhost:9090"
+        url: "http://app-metrics:9090"
 
   cloud:
     gateway:

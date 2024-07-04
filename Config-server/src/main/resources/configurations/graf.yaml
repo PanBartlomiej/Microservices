@@ -4,12 +4,12 @@ spring:
   boot:
     admin:
       client:
-        url: "http://localhost:9090"
+        url: "http://app-metrics:9090"
         username: "user1"
         password: "password"
   #Baza danych
   neo4j:
-    uri: bolt://localhost:7687/neo4j
+    uri: bolt://neo4j:7687/neo4j
     authentication:
       username: neo4j
       password: password
@@ -29,10 +29,10 @@ jwt:
 #Discovery serwer eureka
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka
   client:
     service-url:
-      defaultZone: http://user1:password@localhost:8761/eureka/
+      defaultZone: http://user1:password@eureka:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
     instance:

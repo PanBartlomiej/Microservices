@@ -8,7 +8,7 @@ spring:
 
 # configs to connect to self register the admin server as a client
 spring.boot.admin.client:
-  url: http://localhost:8080,http://localhost:8090,http://localhost:8089,http://localhost:8761,http://localhost:8222,http://localhost:8091,
+  url: http://keycloak:8080,http://ewidencja:8090,http://graf:8089,http://eureka:8761,http://gateway:8222,http://monitoring:8091,
   username: ${spring.security.user.name}
   password: ${spring.security.user.password}
 
@@ -34,12 +34,12 @@ server:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka
     metadata-map:
       user.name: user1
       user.password: password
   client:
     service-url:
-      defaultZone: http://user1:password@localhost:8761/eureka/
+      defaultZone: http://user1:password@eureka:8761/eureka/
     register-with-eureka: true
     fetch-registry: true

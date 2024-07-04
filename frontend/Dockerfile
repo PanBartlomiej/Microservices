@@ -9,7 +9,8 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install --force
-
+RUN npm install -f react-oidc-context
+RUN npm install -f react-d3-graph
 # Copy the entire application code to the container
 COPY . .
 

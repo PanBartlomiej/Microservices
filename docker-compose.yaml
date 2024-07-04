@@ -5,13 +5,15 @@ services:
   #FRONTEND
   frontend:
     build:
-      context: '../frontend/'
+      context: './frontend/'
       dockerfile: Dockerfile
     hostname: frontend
     networks:
       - app-network
     ports:
       - "80:80"
+    depends_on:
+      - gateway
   #BACKEND
   ewidencja:
     build:
@@ -26,6 +28,7 @@ services:
       - DB_ewidencja_mongo
       - eureka
       - auth_keycloak
+      - config-server
     networks:
       - app-network
 
@@ -42,6 +45,7 @@ services:
       - DB_ewidencja_grafowa_baza
       - eureka
       - auth_keycloak
+      - config-server
     networks:
       - app-network
 
@@ -58,9 +62,10 @@ services:
       - DB_ewidencja_grafowa_baza # tu powinnna być baza influxDB
       - eureka
       - auth_keycloak
+      - config-server
     networks:
       - app-network
-
+    hostname: monitoring
   app-metrics:
     build:
       context: ./App-Metrics
@@ -70,9 +75,10 @@ services:
       - "9090:9090"
     depends_on:
       - eureka
+      - config-server
     networks:
       - app-network
-
+    hostname: app-metrics
   gateway:
     build:
       context: ./Gateway
@@ -83,8 +89,13 @@ services:
     depends_on:
       - eureka
       - auth_keycloak
+      - config-server
+      - monitoring
+      - graf
+      - ewidencja
     networks:
       - app-network
+    hostname: gateway
 
   config-server:
     build:
@@ -95,6 +106,7 @@ services:
       - "8888:8888"
     networks:
       - app-network
+    hostname: config-server
 
   eureka:
     build:
@@ -103,8 +115,11 @@ services:
     container_name: eureka-discovery-service
     ports:
       - "8761:8761"
+    depends_on:
+      - config-server
     networks:
       - app-network
+    hostname: eureka
 
   # Baza danych MongoDB
     # BAZA DANYCH EWIDENCJA - NEO4J
@@ -123,8 +138,6 @@ services:
     networks:
       - app-network
     command: neo4j
-
-    #SERWER AUTORYZACYJNY - KEYCLOAK
   auth_keycloak:
     image: quay.io/keycloak/keycloak:${KEYCLOAK_VERSION}
     environment:
@@ -135,14 +148,15 @@ services:
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_HOSTNAME: keycloak
     ports:
       - '8080:8080'
-    command:
-      - start-dev
+    command: -v start-dev --import-realm
     depends_on:
       - DB_users_auth_postgres
     volumes:
       - keycloak_data:/opt/keycloak/data
+      - ./keycloak_import:/opt/keycloak/data/import
     hostname: keycloak
     networks:
       - app-network

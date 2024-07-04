@@ -21,7 +21,7 @@ spring:
   boot:
     admin:
       client:
-        url: "http://localhost:9090"
+        url: "http://app-metrics:9090"
         username: "user1"
         password: "password"
 management:
