@@ -18,12 +18,12 @@ pipeline {
                     services.each { service ->
                         dir("${service}") {
                             echo "Building Docker image for ${service}"
-                            def imageName = "your-docker-repo/${service}:${DOCKER_IMAGE_TAG}"
+                            def imageName = "panbartlomiej/${service}:latest"
                             sh "docker build -t ${imageName} ."
-                            withDockerRegistry([credentialsId: "${DOCKER_CREDENTIALS_ID}", url: ""]) {
-                                sh "docker push ${imageName}"
-                            }
+                            sh "docker login -u ${DOCKER_HUB_CREDENTIALS_USR} -p ${DOCKER_HUB_CREDENTIALS_PSW}"
+                            sh "docker push ${imageName}" // Tylko jeśli używasz Docker Hub
                         }
+                        
                     }
                 }
             }
