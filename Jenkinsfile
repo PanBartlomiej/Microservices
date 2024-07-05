@@ -28,7 +28,7 @@ pipeline {
                 script {
                     echo 'Running Postman tests'
                     sh """
-                       newman run ./postman_collection/Gateway.postman_collection.json --environment ./postman_collection/pracaMagisterska.postman_environment.json
+                       ssh -i ${SSH_KEY} ${SSH_USER}@${SSH_URL} 'newman run ./postman_collection/Gateway.postman_collection.json --environment ./postman_collection/pracaMagisterska.postman_environment.json'
                         """
             }
         }
