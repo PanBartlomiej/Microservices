@@ -233,6 +233,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"add"
@@ -279,6 +280,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"GetOne",
@@ -326,6 +328,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"GetAll"
@@ -380,6 +383,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -426,6 +430,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -485,6 +490,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"switch",
 								"add"
@@ -531,6 +537,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"switch",
 								"GetOne",
@@ -578,6 +585,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"switch",
 								"GetAll"
@@ -632,6 +640,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"switch",
 								"{{productID}}"
@@ -678,6 +687,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"switch",
 								"{{productID}}"
@@ -737,6 +747,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"port",
 								"Add"
@@ -783,6 +794,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"port",
 								"GetOne",
@@ -830,6 +842,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"port",
 								"GetAll"
@@ -876,6 +889,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"port",
 								"{{portID}}"
@@ -935,6 +949,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"router",
 								"add"
@@ -981,6 +996,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"router",
 								"GetOne",
@@ -1028,6 +1044,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"router",
 								"GetAll"
@@ -1082,6 +1099,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"router",
 								"{{productID}}"
@@ -1128,6 +1146,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"router",
 								"{{productID}}"
@@ -1187,6 +1206,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"computer",
 								"add"
@@ -1233,6 +1253,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"computer",
 								"GetOne",
@@ -1280,6 +1301,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"computer",
 								"GetAll"
@@ -1334,6 +1356,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"computer",
 								"{{productID}}"
@@ -1380,6 +1403,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"computer",
 								"{{productID}}"
@@ -1439,6 +1463,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"server",
 								"add"
@@ -1485,6 +1510,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"server",
 								"GetOne",
@@ -1532,6 +1558,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"server",
 								"GetAll"
@@ -1586,6 +1613,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"server",
 								"{{productID}}"
@@ -1632,6 +1660,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"server",
 								"{{productID}}"
@@ -1691,6 +1720,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"add"
@@ -1737,6 +1767,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"all",
 								"GetOne",
@@ -1784,6 +1815,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"all",
 								"GetAll"
@@ -1830,6 +1862,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"ewidencja",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -2067,6 +2100,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"add"
@@ -2113,6 +2147,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"GetOne",
@@ -2160,6 +2195,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"GetAll"
@@ -2214,6 +2250,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -2260,6 +2297,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -2319,6 +2357,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"switch",
 								"add"
@@ -2365,6 +2404,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"switch",
 								"GetOne",
@@ -2412,6 +2452,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"switch",
 								"GetAll"
@@ -2466,6 +2507,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"switch",
 								"{{productID}}"
@@ -2512,6 +2554,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"switch",
 								"{{productID}}"
@@ -2571,6 +2614,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"Add"
@@ -2625,6 +2669,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"Add"
@@ -2671,6 +2716,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"GetOne",
@@ -2718,6 +2764,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"GetAll"
@@ -2764,6 +2811,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"disconnect",
@@ -2822,6 +2870,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"connect"
@@ -2868,6 +2917,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"disconnect",
@@ -2916,6 +2966,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"{{portID}}"
@@ -2962,6 +3013,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"{{portID2}}"
@@ -3021,6 +3073,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"router",
 								"add"
@@ -3067,6 +3120,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"router",
 								"GetOne",
@@ -3114,6 +3168,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"router",
 								"GetAll"
@@ -3168,6 +3223,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"router",
 								"{{productID}}"
@@ -3214,6 +3270,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"router",
 								"{{productID}}"
@@ -3273,6 +3330,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"computer",
 								"add"
@@ -3319,6 +3377,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"computer",
 								"GetOne",
@@ -3366,6 +3425,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"computer",
 								"GetAll"
@@ -3420,6 +3480,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"computer",
 								"{{productID}}"
@@ -3466,6 +3527,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"computer",
 								"{{productID}}"
@@ -3525,6 +3587,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"server",
 								"add"
@@ -3571,6 +3634,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"server",
 								"GetOne",
@@ -3618,6 +3682,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"server",
 								"GetAll"
@@ -3672,6 +3737,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"server",
 								"{{productID}}"
@@ -3718,6 +3784,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"server",
 								"{{productID}}"
@@ -3777,6 +3844,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"add"
@@ -3831,6 +3899,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"add"
@@ -3877,6 +3946,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"all",
 								"GetOne",
@@ -3924,6 +3994,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"all",
 								"GetAll"
@@ -3980,6 +4051,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"all",
 								"GetDeviceAndNeighbours",
@@ -4037,6 +4109,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"port",
 								"connect"
@@ -4093,6 +4166,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"all",
 								"GetDeviceAndNeighbours",
@@ -4140,6 +4214,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"{{productID}}"
@@ -4186,6 +4261,7 @@
 							],
 							"port": "8222",
 							"path": [
+								"graf",
 								"api",
 								"accesspoint",
 								"2"

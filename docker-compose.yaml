@@ -5,11 +5,13 @@ services:
   newman:
     image: postman/newman:alpine
     volumes:
-      - ./postman_collection:/etc/newman
-    entrypoint: [ "newman", "run", "/etc/newman/Gateway.postman_collection.json", "--environment",
-                  "/etc/newman/pracaMagisterska.postman_environment.json" ]
+      - ./postman_collection:/etc/postman
+    entrypoint: [ "newman", "run", "/etc/postman/Gateway.postman_collection.json", "--environment",
+                  "/etc/postman/pracaMagisterska.postman_environment.json" ]
     depends_on:
       - gateway
+    networks:
+      - app-network
   #FRONTEND
   frontend:
     build:
