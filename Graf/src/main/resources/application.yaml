@@ -1,10 +1,8 @@
 spring:
   application:
-    name: Ewidencja
-#Serwer konfiguracyjny
+    name: Graf
   config:
     import: optional:configserver:http://user1:password@config-server:8888
-
   boot:
     admin:
       client:
@@ -12,16 +10,13 @@ spring:
         username: "user1"
         password: "password"
   #Baza danych
-
-  data:
-    mongodb:
-      authentication-database: admin
-      username: root
+  neo4j:
+    uri: bolt://neo4j:7687/neo4j
+    hostname: neo4j:7687
+    authentication:
+      username: neo4j
       password: password
-      database: ewidencja
-      host: mongo
-      port: 27017
-  #Uwierzytelnianie konfiguracja Spring seciurity
+  #Uwierzytelnianie
   security:
     oauth2:
       resourceserver:
@@ -34,10 +29,6 @@ jwt:
     converter:
       resource-id: ewidencja
       principle-attribute: preferred_username
-#Serwer uwierzytelniający
-app:
-  keycloak-url: http://keycloak:8080
-
 #Discovery serwer eureka
 eureka:
   instance:
@@ -52,6 +43,15 @@ eureka:
         user:
           name: user1
           password: password
+
+#Serwer  uwierzytelniaj?cy
+app:
+  keycloak-url: http://keycloak:8080
+
+logging:
+  level:
+    org.springframework.data.neo4j.cypher: trace
+
 #actuator
 management:
   endpoints:
@@ -65,5 +65,7 @@ management:
     health:
       show-details: always
 
+
 server:
-  port: 8090
+  port: 8089
+

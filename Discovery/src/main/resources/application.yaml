@@ -3,3 +3,41 @@ spring:
     name: Discovery
   config:
     import: optional:configserver:http://user1:password@config-server:8888
+
+  security:
+    user:
+      name: user1
+      password: password
+      roles: ADMIN
+  boot:
+    admin:
+      client:
+        url: "http://app-metrics:9090"
+        username: "user1"
+        password: "password"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  username: user1
+  password: password
+  roles: ADMIN
+server:
+  port: 8761

@@ -3,4 +3,92 @@ spring:
     name: Gateway
   config:
     import: optional:configserver:http://user1:password@config-server:8888
+  boot:
+    admin:
+      client:
+        url: "http://app-metrics:9090"
+
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost"  # Replace with your client URL
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      mvc:
+        routes:
+          - id: monitoring
+            uri: http://monitoring:8091
+            predicates:
+              - Path=/monitoring/**
+            filters:
+              - RewritePath=/monitoring/(?<segment>.*), /$\{segment}
+          - id: graf
+            uri: http://graf:8089
+            predicates:
+              - Path=/graf/**
+            filters:
+              - RewritePath=/graf/(?<segment>.*), /$\{segment}
+              - TokenRelay=
+          - id: ewidencja
+            uri: http://ewidencja:8090
+            predicates:
+              - Path=/ewidencja/**
+            filters:
+              - RewritePath=/ewidencja/(?<segment>.*), /$\{segment}
+              - TokenRelay=
+
+  # Konfiguracja bramy dla Keycloak
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/oidc
+          jwk-set-uri: http://keycloak:8080/realms/oidc/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: ewidencja
+      principle-attribute: preferred_username
+
+
+#Serwer uwierzytelniający
+app:
+  keycloak-url: http://keycloak:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  endpoint:
+    health:
+      show-details: always
+
+
+server:
+  port: 8222
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    service-url:
+      defaultZone: http://user1:password@eureka:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    instance:
+      metadata-map:
+        user:
+          name: user1
+          password: password
 

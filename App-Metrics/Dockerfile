@@ -14,4 +14,4 @@ COPY --from=builder /app/build/libs/App-Metrics-*.jar app.jar
 
 EXPOSE 9090
 
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=classpath:/application.yaml,file:/app/application.yaml"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

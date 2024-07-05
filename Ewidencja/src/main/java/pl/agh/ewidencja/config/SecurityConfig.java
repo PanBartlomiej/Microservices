@@ -42,7 +42,6 @@ public class SecurityConfig {
                 .requestMatchers("/actuator/**").permitAll() // Permit access to actuator endpoints
                 .anyRequest().authenticated()
                 .and()
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .oauth2ResourceServer(oauth ->oauth.jwt(jwt ->jwt.jwtAuthenticationConverter(jwtAuthConverter)))
                 .sessionManagement(session ->session.sessionCreationPolicy(STATELESS));
         // Zwróć zbudowany łańcuch filtrów zabezpieczeń

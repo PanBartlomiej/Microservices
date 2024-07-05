@@ -14,4 +14,4 @@ COPY --from=builder /app/build/libs/Gateway-*.jar app.jar
 
 EXPOSE 8222
 
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.config.location=classpath:/application.yaml,file:/app/application.yaml"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

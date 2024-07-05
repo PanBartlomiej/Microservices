@@ -20,6 +20,8 @@ public class DeviceService {
     String password;
     @Value("${spring.neo4j.authentication.username}")
     String username;
+    @Value("${spring.neo4j.hostname}")
+    String hostname;
 
     @Autowired
     SwitchService switchService;
@@ -108,7 +110,7 @@ public class DeviceService {
 
     public Map<String, HashSet<Object>> getAllDevicesWithConnectedPorts(){
         Driver driver = GraphDatabase
-                .driver("neo4j://localhost:7687", AuthTokens.basic(username, password));
+                .driver("neo4j://"+hostname, AuthTokens.basic(username, password));
 
         Neo4jClient client = Neo4jClient.create(driver);
         List<Map<String, Object>> lista = client.query(
@@ -151,7 +153,7 @@ public class DeviceService {
     }
     public Map<String,HashSet<Object>> getDeviceAndNeighbours(String productID) {
         Driver driver = GraphDatabase
-                .driver("neo4j://localhost:7687", AuthTokens.basic(username, password));
+                .driver("neo4j://"+hostname, AuthTokens.basic(username, password));
 
         Neo4jClient client = Neo4jClient.create(driver);
         List<Map<String, Object>> lista = client.query(
@@ -198,7 +200,7 @@ public class DeviceService {
 
     public ResponseEntity<String> updateDevicesPositions(List<Switch> products) {
         Driver driver = GraphDatabase
-                .driver("neo4j://localhost:7687", AuthTokens.basic(username, password));
+                .driver("neo4j://"+hostname, AuthTokens.basic(username, password));
 
         Neo4jClient client = Neo4jClient.create(driver);
         ArrayList<String> ids= new ArrayList<>();
