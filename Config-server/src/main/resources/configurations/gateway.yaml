@@ -23,32 +23,42 @@ spring:
 
   cloud:
     gateway:
-      routes:
-        - id: ewidencja
-          uri: http://ewidencja:8090
-          predicates:
-            - Path=/ewidencja/**
-          filters:
-            - RewritePath=/ewidencja/(?<segment>.*), /$\{segment}
-            - TokenRelay=
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost"  # Replace with your client URL
+            allowedMethods: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      mvc:
+        routes:
+          - id: monitoring
+            uri: http://monitoring:3000
+            predicates:
+              - Path=/monitoring/**
+            filters:
+              - RewritePath=/monitoring/(?<segment>.*), /$\{segment}
+          - id: graf
+            uri: http://graf:8089
+            predicates:
+              - Path=/graf/**
+            filters:
+              - RewritePath=/graf/(?<segment>.*), /$\{segment}
+              - TokenRelay=
+          - id: ewidencja
+            uri: http://ewidencja:8090
+            predicates:
+              - Path=/ewidencja/**
+            filters:
+              - RewritePath=/ewidencja/(?<segment>.*), /$\{segment}
+              - TokenRelay=
 
-        - id: graf
-          uri: http://graf:8089
-          predicates:
-            - Path=/graf/**
-          filters:
-            - RewritePath=/graf/(?<segment>.*), /$\{segment}
-            - TokenRelay=
 
-        - id: monitoring
-          uri: http://monitoring:8091
-          predicates:
-            - Path=/monitoring/**
-          filters:
-            - RewritePath=/monitoring/(?<segment>.*), /$\{segment}
-            - TokenRelay=
-
-  # Konfiguracja bramy dla Keycloak
+    # Konfiguracja bramy dla Keycloak
   security:
     oauth2:
       resourceserver:

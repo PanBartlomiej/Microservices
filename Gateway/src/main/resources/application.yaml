@@ -13,7 +13,7 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost"  # Replace with your client URL
+            allowedOrigins: "http://localhost"  # client URL
             allowedMethods: "*"
             allowedHeaders: "*"
             allowCredentials: true
@@ -24,7 +24,7 @@ spring:
       mvc:
         routes:
           - id: monitoring
-            uri: http://monitoring:8091
+            uri: http://monitoring:3000
             predicates:
               - Path=/monitoring/**
             filters:

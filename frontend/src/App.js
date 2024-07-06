@@ -10,10 +10,10 @@ import GrafanaChart from './monitoring/monitoring.jsx'
 import './cssStyle/style.css'; // Import jasnego stylu
 import './cssStyle/darkStyle.css'; // Import ciemnego stylu
 import {names} from './names.js';
+import config from "./config";
 
 function App() {
-  const grafanaSrc = "http://localhost:3000/?orgId=1";
-
+  const grafanaSrc = config.API_URL_MONITORING
   const [selectedComponent, setSelectedComponent] = useState('Tabele');
   const [darkMode, setDarkMode] = useState(false); // Stan dla trybu ciemnego
   const [language, setLanguage] = useState('pl');
@@ -84,7 +84,6 @@ function App() {
         return (
           <div>
             <h2>Monitoring</h2>
-            <span>To be implemented</span>
             <GrafanaChart src={grafanaSrc}/>
           </div>
         );

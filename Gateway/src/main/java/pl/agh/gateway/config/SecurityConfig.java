@@ -37,6 +37,7 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // Konfiguracja zabezpieczeń HTTP
         http
+                .headers(headers -> headers.frameOptions(frame ->frame.disable()))
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeRequests()
                 .requestMatchers("/actuator/**").permitAll() // Permit access to actuator endpoints
