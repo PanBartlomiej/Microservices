@@ -13,10 +13,9 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            allowedOrigins: "http://localhost"  # client URL
+            allowedOrigins: "*"  # client URL
             allowedMethods: "*"
             allowedHeaders: "*"
-            allowCredentials: true
       discovery:
         locator:
           enabled: true
@@ -29,6 +28,7 @@ spring:
               - Path=/monitoring/**
             filters:
               - RewritePath=/monitoring/(?<segment>.*), /$\{segment}
+              - RemoveRequestHeader=Authorization
           - id: graf
             uri: http://graf:8089
             predicates:

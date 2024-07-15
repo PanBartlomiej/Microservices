@@ -26,7 +26,5 @@ public class Switch {
     @Id
     private String id;
     private String netID;
-
     private List<Port> ports;
-
 }
