@@ -183,6 +183,7 @@ services:
     hostname: monitoring
     volumes:
       - grafana_data:/var/lib/grafana
+      - Monitoring/Monitoring urządzeń sieciowych-1720267328606.json:/etc/grafana/provisioning/dashboards/Monitoring urządzeń sieciowych-1720267328606.json
   influxdb:
     image: influxdb:2.7
     container_name: influxdb
