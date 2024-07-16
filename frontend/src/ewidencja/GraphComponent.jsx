@@ -58,7 +58,7 @@ function GraphComponent ({language}) {
       x : portItem.x ,
       y : portItem.y,
       label: portItem.id,
-      color: portItem.color ? portItem.color :'lightblue',
+      color: switchItem.color ? switchItem.color :'lightblue',
       size: 70,
       symbolType: "square",
       nodeType: 'port', 

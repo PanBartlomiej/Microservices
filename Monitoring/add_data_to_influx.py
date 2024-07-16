@@ -1,9 +1,9 @@
 import csv
 from influxdb_client import InfluxDBClient, Point, WriteOptions
 
-token = "GuCoKr9rdRP7Bak9l_qyalr86Sbv4YURX9v6VgrlSuF7C4eTjTQhGmz-KMj1IXnFHOUJQgBP6lKK4Y_KBJ4WTw=="
+token = "XvWSJaSS6sHZB7ETbJW9ns_QaNSMc961XBUyajACtdo0cipY7CSulSvz3R3LZQN2Rq642_U-qC3Gci3OE8RAvQ=="
 org = "myorg"
-bucket = "data_test"
+bucket = "mybucket"
 
 client = InfluxDBClient(url="http://localhost:8086", token=token)
 
