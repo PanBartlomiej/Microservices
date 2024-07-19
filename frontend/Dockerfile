@@ -11,6 +11,7 @@ COPY package*.json ./
 RUN npm install --force
 RUN npm install -f react-oidc-context
 RUN npm install -f react-d3-graph
+
 # Copy the entire application code to the container
 COPY . .
 
@@ -23,8 +24,11 @@ FROM nginx:alpine
 # Copy the built React app to Nginx's web server directory
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80 for the Nginx server
+# Copy the custom Nginx configuration file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ssl /etc/nginx/ssl
+# Expose port 80 and 443 for the Nginx server
 EXPOSE 80
-
+EXPOSE 443
 # Start Nginx when the container runs
 CMD ["nginx", "-g", "daemon off;"]

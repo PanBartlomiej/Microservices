@@ -22,6 +22,7 @@ services:
       - app-network
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - gateway
   #BACKEND
@@ -142,15 +143,23 @@ services:
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      PROXY_ADDRESS_FORWARDING: true
+      KEYCLOAK_FRONTEND_URL: https://172.20.40.223:8443/auth
       KC_HOSTNAME: keycloak
+      KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key
+      KC_PROXY_HEADERS: xforwarded
     ports:
       - '8080:8080'
+      - "8443:8443"
     command: -v start-dev --import-realm
     depends_on:
       - DB_users_auth_postgres
     volumes:
       - keycloak_data:/opt/keycloak/data
       - ./keycloak_import:/opt/keycloak/data/import
+      - ./frontend/ssl/server.crt:/opt/keycloak/conf/server.crt
+      - ./frontend/ssl/server.key:/opt/keycloak/conf/server.key
     hostname: keycloak
     networks:
       - app-network
