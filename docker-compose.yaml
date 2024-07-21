@@ -22,6 +22,7 @@ services:
       - app-network
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - gateway
   #BACKEND
